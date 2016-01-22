@@ -3,24 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>本地存储的手段 | Fuxiao&#39;s Blog</title>
+  <title>Tag: 本地存储 | Fuxiao&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
-<meta property="og:type" content="article">
-<meta property="og:title" content="本地存储的手段">
-<meta property="og:url" content="http://fuxiao0.github.io/2016/01/22/本地存储/index.html">
+  <meta name="description" content="a little one wants to have the world with her power">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuxiao's Blog">
+<meta property="og:url" content="http://fuxiao0.github.io/tags/本地存储/index.html">
 <meta property="og:site_name" content="Fuxiao's Blog">
-<meta property="og:description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
-<meta property="og:updated_time" content="2016-01-22T11:39:26.000Z">
+<meta property="og:description" content="a little one wants to have the world with her power">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="本地存储的手段">
-<meta name="twitter:description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
+<meta name="twitter:title" content="Fuxiao's Blog">
+<meta name="twitter:description" content="a little one wants to have the world with her power">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -73,62 +66,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-本地存储" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/22/本地存储/" class="article-date">
-  <time datetime="2016-01-22T08:59:28.000Z" itemprop="datePublished">2016-01-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      本地存储的手段
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/01/22/本地存储/" class="archive-article-date">
+  <time datetime="2016-01-22T08:59:28.000Z" itemprop="datePublished">Jan 22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/01/22/本地存储/">本地存储的手段</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说明：</p>
-<p>1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。</p>
-<p>2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发送的方式，这样就减少了不必要的工作。 </p>
-<p>3.通过sessionStorage所存储数据的生命周期，和Session类似，关闭浏览器（或标签页）后数据就不存在了。但刷新页面或使用“前进”、“后退按钮”后sessionStorage仍然存在。</p>
-<p>4.session storage每个窗口的值都是独立的（每个窗口都有自己的数据），它的数据会随着窗口的关闭而消失，窗口间的sessionStorage也是不可以共享的。</p>
-<p>5.setItem中的key、value使用的是字符串的形式进行存储的。也就是说如果有如下的代码：setItem(‘count’, 1);通过getItem(‘count’) + 5 得到的将不是预期的6(整数)，而是’16’(字符串)。</p>
-<p>6.再次使用setItem设置已经存在的key的value时，新的值将替代旧的值。</p>
-<p>7.当存储中的数据发生改变时，会触发相应的事件（window.onstorage），但目前各浏览器对此事件的支持并不完善，暂时可以忽略。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/本地存储/" data-id="cijpmczg5000306v7pvi69q4m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地存储/">本地存储</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/01/22/Velocity/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Velocity</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
+  
+  
+    </div></section>
+  
 </section>
         
           <aside id="sidebar">
