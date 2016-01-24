@@ -94,6 +94,18 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <p>说明：</p>
+<p>1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。</p>
+<p>2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发送的方式，这样就减少了不必要的工作。 </p>
+<p>3.通过sessionStorage所存储数据的生命周期，和Session类似，关闭浏览器（或标签页）后数据就不存在了。但刷新页面或使用“前进”、“后退按钮”后sessionStorage仍然存在。</p>
+<p>4.session storage每个窗口的值都是独立的（每个窗口都有自己的数据），它的数据会随着窗口的关闭而消失，窗口间的sessionStorage也是不可以共享的。</p>
+<p>5.setItem中的key、value使用的是字符串的形式进行存储的。也就是说如果有如下的代码：setItem(‘count’, 1);通过getItem(‘count’) + 5 得到的将不是预期的6(整数)，而是’16’(字符串)。</p>
+<p>6.再次使用setItem设置已经存在的key的value时，新的值将替代旧的值。</p>
+<p>7.当存储中的数据发生改变时，会触发相应的事件（window.onstorage），但目前各浏览器对此事件的支持并不完善，暂时可以忽略。</p>
+
+    
       
         <p>说明：</p>
 <p>1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。</p>
@@ -107,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/本地存储/" data-id="cijse0qdz0003qmv7r1r1ys0y" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/22/本地存储/" data-id="cijsfbdnk0003sfv7vva61dum" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地存储/">本地存储</a></li></ul>
@@ -128,6 +140,7 @@
 
   
 </article>
+
 
 </section>
         
