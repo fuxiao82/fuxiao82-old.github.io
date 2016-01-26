@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>本地存储的手段 | Be Myself</title>
+  <title>ES6新特性在Babel下的兼容性列表 | Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
+  <meta name="description" content="ES6新特性在Babel下的兼容性列表
+ES6特性    兼容性箭头函数    支持类的声明和继承    部分支持，IE8不支持增强的对象字面量    支持字符串模板    支持解构    支持，但注意使用方式参数默认值，不定参数，拓展参数    支持let与const    支持for of    IE不支持iterator, generator    不支持模块 module、Proxies、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="本地存储的手段">
-<meta property="og:url" content="http://fuxiao0.github.io/2016/01/22/本地存储/index.html">
+<meta property="og:title" content="ES6新特性在Babel下的兼容性列表">
+<meta property="og:url" content="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
-<meta property="og:updated_time" content="2016-01-22T11:39:26.000Z">
+<meta property="og:description" content="ES6新特性在Babel下的兼容性列表
+ES6特性    兼容性箭头函数    支持类的声明和继承    部分支持，IE8不支持增强的对象字面量    支持字符串模板    支持解构    支持，但注意使用方式参数默认值，不定参数，拓展参数    支持let与const    支持for of    IE不支持iterator, generator    不支持模块 module、Proxies、">
+<meta property="og:updated_time" content="2016-01-26T12:25:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="本地存储的手段">
-<meta name="twitter:description" content="说明：
-1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。
-2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发">
+<meta name="twitter:title" content="ES6新特性在Babel下的兼容性列表">
+<meta name="twitter:description" content="ES6新特性在Babel下的兼容性列表
+ES6特性    兼容性箭头函数    支持类的声明和继承    部分支持，IE8不支持增强的对象字面量    支持字符串模板    支持解构    支持，但注意使用方式参数默认值，不定参数，拓展参数    支持let与const    支持for of    IE不支持iterator, generator    不支持模块 module、Proxies、">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -83,10 +80,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-本地存储" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ES6新特性在Babel下的兼容性列表" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/22/本地存储/" class="article-date">
-  <time datetime="2016-01-22T08:59:28.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/01/26/ES6新特性在Babel下的兼容性列表/" class="article-date">
+  <time datetime="2016-01-26T12:18:13.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     
   </div>
@@ -97,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      本地存储的手段
+      ES6新特性在Babel下的兼容性列表
     </h1>
   
 
@@ -106,42 +103,25 @@
     <div class="article-entry" itemprop="articleBody">
  
         
-        <p>说明：</p>
-<p>1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。</p>
-<p>2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发送的方式，这样就减少了不必要的工作。 </p>
-<p>3.通过sessionStorage所存储数据的生命周期，和Session类似，关闭浏览器（或标签页）后数据就不存在了。但刷新页面或使用“前进”、“后退按钮”后sessionStorage仍然存在。</p>
-<p>4.session storage每个窗口的值都是独立的（每个窗口都有自己的数据），它的数据会随着窗口的关闭而消失，窗口间的sessionStorage也是不可以共享的。</p>
-<p>5.setItem中的key、value使用的是字符串的形式进行存储的。也就是说如果有如下的代码：setItem(‘count’, 1);通过getItem(‘count’) + 5 得到的将不是预期的6(整数)，而是’16’(字符串)。</p>
-<p>6.再次使用setItem设置已经存在的key的value时，新的值将替代旧的值。</p>
-<p>7.当存储中的数据发生改变时，会触发相应的事件（window.onstorage），但目前各浏览器对此事件的支持并不完善，暂时可以忽略。</p>
+        <p>ES6新特性在Babel下的兼容性列表</p>
+<p>ES6特性    兼容性<br>箭头函数    支持<br>类的声明和继承    部分支持，IE8不支持<br>增强的对象字面量    支持<br>字符串模板    支持<br>解构    支持，但注意使用方式<br>参数默认值，不定参数，拓展参数    支持<br>let与const    支持<br>for of    IE不支持<br>iterator, generator    不支持<br>模块 module、Proxies、Symbol    不支持<br>Map，Set 和 WeakMap，WeakSet    不支持<br>Promises、Math，Number，String，Object 的新API    不支持<br>export &amp; import    支持<br>生成器函数    不支持<br>数组拷贝    支持</p>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/本地存储/" data-id="cijvdni8i0006vfv78qteteko" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/" data-id="cijvdni8y000ivfv7nlliqq4q" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地存储/">本地存储</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/01/26/ES6新特性在Babel下的兼容性列表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ES6新特性在Babel下的兼容性列表
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/22/Velocity/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/22/本地存储/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Velocity</div>
+      <div class="article-nav-title">本地存储的手段</div>
     </a>
   
 </nav>
