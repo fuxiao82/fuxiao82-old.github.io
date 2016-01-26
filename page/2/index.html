@@ -104,9 +104,9 @@
         <h2 id="u9009_u62E9_u5668"><a href="#u9009_u62E9_u5668" class="headerlink" title="选择器"></a>选择器</h2><p>1.后代选择器与子选择器区别：</p>
 <ul>
 <li>后代选择器包含子、孙。。。所有子子孙孙内容；</li>
-<li>子选择器只包括子的内容，不包括孙的内容；<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">div</span> <span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">body</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>子选择器只包括子的内容，不包括孙的内容；</li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">div</span> <span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">body</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;1&lt;/div&gt;</span><br><span class="line">&lt;div&gt;2&lt;/div&gt;</span><br><span class="line">&lt;div&gt;3S</span><br><span class="line">    &lt;div&gt;dd</span><br><span class="line">        &lt;div&gt;31&lt;/div*        &lt;div&gt;32&lt;/div*    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;4</span><br><span class="line">    &lt;div&gt;dd</span><br><span class="line">        &lt;div&gt;41&lt;/div*        &lt;div&gt;42&lt;/div*    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <p>2.伪类:link,:visited,:hover,:active排列顺序是如此，且对于a标签，必须有href属性，且href属性不是http格式，才可展示link标签的样式；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:link</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:visited</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:active</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
@@ -155,7 +155,7 @@
     <div class="article-entry" itemprop="articleBody">
  
         
-        <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><ul>
+        <h2 id="letn"><a href="#letn" class="headerlink" title="letn"></a>letn</h2><ul>
 <li><p>let声明的变量只在它所在的代码块有效。</p>
 </li>
 <li><p>let不像var那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。</p>
@@ -365,34 +365,28 @@
 <li><p>一旦加上u修饰符号，就会修改下面这些正则表达式的行为,对于码点大于0xFFFF的Unicode字符:</p>
 </li>
 </ul>
-<pre><code>1.点（.）字符
-
-
-
-2.大括号  变量
-
-
-
-3.量词:
-
+<ol>
+<li>点（.）字符</li>
+<li>大括号  变量</li>
+<li>量词:</li>
+</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/𠮷&#123;<span class="number">2</span>&#125;/.test(<span class="string">'𠮷𠮷'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">/𠮷&#123;<span class="number">2</span>&#125;/u.test(<span class="string">'𠮷𠮷'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-4.预定义模式
-
+<ol>
+<li>预定义模式</li>
+</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/^\S$/.test(<span class="string">'𠮷'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">/^\S$/u.test(<span class="string">'𠮷'</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">上面代码的\S是预定义模式</span><br></pre></td></tr></table></figure>
-
-
-
-5.i修饰符
-
-&gt;有些Unicode字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。
-
-
-
+<ol>
+<li><p>i修饰符</p>
+<ul>
+<li>有些Unicode字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。</li>
+</ul>
+</li>
+</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/[a-z]/i.test(<span class="string">'\u212A'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">/[a-z]/iu.test(<span class="string">'\u212A'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-&gt;上面代码中，不加u修饰符，就无法识别非规范的K字符。
-</code></pre><h3 id="y_u4FEE_u9970_u7B26"><a href="#y_u4FEE_u9970_u7B26" class="headerlink" title="y修饰符"></a>y修饰符</h3><ul>
+<ul>
+<li>上面代码中，不加u修饰符，就无法识别非规范的K字符。</li>
+</ul>
+<h3 id="y_u4FEE_u9970_u7B26"><a href="#y_u4FEE_u9970_u7B26" class="headerlink" title="y修饰符"></a>y修饰符</h3><ul>
 <li><p>全局匹配作用，类似g修饰符；</p>
 </li>
 <li><p>g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。</p>
@@ -406,55 +400,35 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> r = <span class="regexp">/hello\d/y</span>;</span><br><span class="line"></span><br><span class="line">r.sticky <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <h2 id="u6570_u503C_u7684_u6269_u5C55"><a href="#u6570_u503C_u7684_u6269_u5C55" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><ul>
-<li>新提供了Number.isFinite()和Number.isNaN()两个方法，用来检查Infinite和NaN这两个特殊值</li>
-</ul>
-<blockquote>
-<p>区别：传统方法先调用Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效</p>
-</blockquote>
-<ul>
-<li>parseInt()和parseFloat()，移植到Number对象上面</li>
+<li><p>新提供了Number.isFinite()和Number.isNaN()两个方法，用来检查Infinite和NaN这两个特殊值</p>
+<p>** 区别：传统方法先调用Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效</p>
+</li>
+<li><p>parseInt()和parseFloat()，移植到Number对象上面</p>
+</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// ES5的写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'12.34'</span>) <span class="comment">// 12</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'123.45#'</span>) <span class="comment">// 123.45</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6的写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>.parseInt(<span class="string">'12.34'</span>) <span class="comment">// 12</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>.parseFloat(<span class="string">'123.45#'</span>) <span class="comment">// 123.45</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>目的，是逐步减少全局性方法，使得语言逐步模块化</p>
-</blockquote>
+<p>** 目的，是逐步减少全局性方法，使得语言逐步模块化</p>
 <ul>
 <li>Number.isInteger()</li>
 </ul>
-<blockquote>
-<p>作用：用来判断一个值是否为整数（3.0被视为3）</p>
-</blockquote>
+<p>** 作用：用来判断一个值是否为整数（3.0被视为3）</p>
 <ul>
 <li>Number.EPSILON 极小的常量</li>
 </ul>
-<blockquote>
-<p>目的：在于为浮点数计算，设置一个误差范围（误差能够小于Number.EPSILON，我们就可以认为得到了正确结果，</p>
-</blockquote>
+<p>** 目的：在于为浮点数计算，设置一个误差范围（误差能够小于Number.EPSILON，我们就可以认为得到了正确结果，</p>
 <p>Number.EPSILON的实质是一个可以接受的误差范围。）</p>
 <ul>
-<li>安全整数和Number.isSafeInteger</li>
+<li>安全整数和Number.isSafeInteger<br>**  Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限。</li>
 </ul>
-<blockquote>
-<p>Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限。</p>
-</blockquote>
 <p>Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内。</p>
-<blockquote>
-<p>验证运算结果是否落在安全整数的范围时，不要只验证运算结果，而要同时验证参与运算的每个值。</p>
-</blockquote>
+<p>** 验证运算结果是否落在安全整数的范围时，不要只验证运算结果，而要同时验证参与运算的每个值。</p>
 <ul>
 <li>Math.trunc()</li>
 </ul>
 <p>Math.trunc方法用于去除一个数的小数部分，返回整数部分。</p>
 <ul>
-<li>Math.sign方法用来判断一个数到底是正数、负数、还是零。</li>
-</ul>
-<p>它会返回五种值。</p>
-<p>参数为正数，返回+1；</p>
-<p>参数为负数，返回-1；</p>
-<p>参数为0，返回0；</p>
-<p>参数为-0，返回-0;</p>
-<p>其他值，返回NaN。</p>
-<ul>
+<li><p>Math.sign方法用来判断一个数到底是正数、负数、还是零。<br>它会返回五种值。<br>参数为正数，返回+1；<br>参数为负数，返回-1；<br>参数为0，返回0；<br>参数为-0，返回-0;<br>其他值，返回NaN。</p>
+</li>
 <li><p>Math.cbrt方法用于计算一个数的立方根。</p>
 </li>
 <li><p>Math.clz32方法返回一个数的32位无符号整数形式有多少个前导0。</p>
@@ -467,7 +441,7 @@
 <h3 id="u6570_u7EC4_u7684_u6269_u5C55"><a href="#u6570_u7EC4_u7684_u6269_u5C55" class="headerlink" title="数组的扩展"></a>数组的扩展</h3><ul>
 <li>类似数组的对象（array-like object）和可遍历（iterable）的对象（包括新增Set和Map）</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line">\\\\</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> namesSet = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.from(namesSet) <span class="comment">// ['a', 'b']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from(<span class="string">'hello'</span>)</span><br><span class="line">\\\\</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> namesSet = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>])</span><br><span class="line"><span class="built_in">Array</span>.from(namesSet) <span class="comment">// ['a', 'b']</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。</p>
 </li>
@@ -480,38 +454,30 @@
 <li><p>Array.of基本上可以用来替代Array()或new Array()，并且不存在由于参数不同而导致的重载。它的行为非常统一。</p>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;&#10;Array.of() // []&#10;&#10;Array.of(undefined) // [undefined]&#10;&#10;Array.of(1) // [1]&#10;&#10;Array.of(1, 2) // [1, 2]</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.of() // []&#10;&#10;Array.of(undefined) // [undefined]&#10;&#10;Array.of(1) // [1]&#10;&#10;Array.of(1, 2) // [1, 2]</span><br></pre></td></tr></table></figure>
 <ul>
 <li>实例的copyWithin() </li>
 </ul>
-<blockquote>
-<p>在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组</p>
-<p>它接受三个参数。</p>
-</blockquote>
+<p>** 在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组</p>
+<p>** 它接受三个参数。</p>
 <p>target（必需）：从该位置开始替换数据。</p>
 <p>start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。</p>
 <p>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</p>
 <ul>
 <li>find方法，用于找出第一个符合条件的数组成员</li>
 </ul>
-<blockquote>
-<p>如果没有符合条件的成员，则返回undefined</p>
-</blockquote>
+<p>** 如果没有符合条件的成员，则返回undefined</p>
 <ul>
 <li>findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置</li>
 </ul>
-<blockquote>
-<p>如果所有成员都不符合条件，则返回-1。</p>
-</blockquote>
+<p>** 如果所有成员都不符合条件，则返回-1。</p>
 <ul>
 <li><p>fill方法使用给定值，填充一个数组,参数（target，start，end）</p>
 </li>
 <li><p>entries()，keys()和values()——用于遍历数组</p>
 </li>
 </ul>
-<blockquote>
-<p>唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历</p>
-</blockquote>
+<p>** 唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历</p>
 <ul>
 <li><p>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似</p>
 </li>
