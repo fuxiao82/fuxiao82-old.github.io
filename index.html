@@ -78,6 +78,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/28/闭包/" class="article-date">
+  <time datetime="2016-01-28T10:51:25.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/闭包/">闭包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <p>复制代码<br>//第1种写法<br>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
+<p>var c = new Circle(1.0);<br>alert(c.area());<br>复制代码<br>这种写法没什么特别的，只是给函数添加一些属性。</p>
+<p>复制代码<br>//第2种写法<br>var Circle = function() {<br>   var obj = new Object();<br>   obj.PI = 3.14159;  </p>
+<p>   obj.area = function( r ) {<br>       return this.PI <em> r </em> r;<br>   }<br>   return obj;<br>}  </p>
+<p>var c = new Circle();<br>alert( c.area( 1.0 ) );<br>复制代码<br>这种写法是声明一个变量，将一个函数当作值赋给变量。</p>
+<p>复制代码<br>//第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
+<p>alert( Circle.Area( 1.0 ) );<br>复制代码<br>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</p>
+<p>复制代码<br>//第4种写法<br>var Circle={<br>   “PI”:3.14159,<br> “area”:function(r){<br>          return this.PI <em> r </em> r;<br>        }  </p>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cijy56w1s0006msv70pq1pi76" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-前端摩尔定律" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/26/前端摩尔定律/" class="article-date">
@@ -106,7 +152,7 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cijvehf4y000cwlv7q8lza35k" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cijy56w24000dmsv7ti85m6uh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端定律/">前端定律</a></li></ul>
@@ -148,58 +194,10 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/" data-id="cijvehf5b000lwlv7twjnwkce" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/" data-id="cijy56w2b000mmsv7b9ro2oos" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-本地存储" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/22/本地存储/" class="article-date">
-  <time datetime="2016-01-22T08:59:28.000Z" itemprop="datePublished">2016-01-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/22/本地存储/">本地存储的手段</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <p>说明：</p>
-<p>1.cookie的存储限制在了4k之内，相比来说，session storage有了更大的存储空间，但至于具体多大，这要参照浏览器厂商的具体实现。</p>
-<p>2.cookie有一个机制，就是在每次客户端请求服务器的时候都会将cookie发送给服务器，这无疑会做很多不必要的操作，因为并不是每次请求服务器都需要cookie的所有信息，而session storage很好的解决了这个问题，它不是采取自动发送的方式，这样就减少了不必要的工作。 </p>
-<p>3.通过sessionStorage所存储数据的生命周期，和Session类似，关闭浏览器（或标签页）后数据就不存在了。但刷新页面或使用“前进”、“后退按钮”后sessionStorage仍然存在。</p>
-<p>4.session storage每个窗口的值都是独立的（每个窗口都有自己的数据），它的数据会随着窗口的关闭而消失，窗口间的sessionStorage也是不可以共享的。</p>
-<p>5.setItem中的key、value使用的是字符串的形式进行存储的。也就是说如果有如下的代码：setItem(‘count’, 1);通过getItem(‘count’) + 5 得到的将不是预期的6(整数)，而是’16’(字符串)。</p>
-<p>6.再次使用setItem设置已经存在的key的value时，新的值将替代旧的值。</p>
-<p>7.当存储中的数据发生改变时，会触发相应的事件（window.onstorage），但目前各浏览器对此事件的支持并不完善，暂时可以忽略。</p>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/本地存储/" data-id="cijvehf4n0006wlv7yf5zjrkd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地存储/">本地存储</a></li></ul>
 
     </footer>
   </div>
@@ -242,7 +240,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">时间轴</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -253,6 +251,10 @@
     <h3 class="widget-title">最近更新</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/28/闭包/">闭包</a>
+          </li>
         
           <li>
             <a href="/2016/01/26/前端摩尔定律/">前端摩尔定律</a>
@@ -268,10 +270,6 @@
         
           <li>
             <a href="/2016/01/22/Velocity/">Velocity</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/22/css权威指南/">css权威指南</a>
           </li>
         
       </ul>
