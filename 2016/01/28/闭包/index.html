@@ -3,21 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>闭包 | Be Myself</title>
+  <title>Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="复制代码//第1种写法function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());复制代码这种写法没什么特别的，只">
+  <meta name="description" content="第1种写法  
+
+function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
+var c = new Circle(1.0);alert(c.area());    
+
+这种写法没什么特别的，只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
+<meta property="og:title" content="Be Myself">
 <meta property="og:url" content="http://fuxiao0.github.io/2016/01/28/闭包/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="复制代码//第1种写法function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());复制代码这种写法没什么特别的，只">
-<meta property="og:updated_time" content="2016-01-28T10:52:55.000Z">
+<meta property="og:description" content="第1种写法  
+
+function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
+var c = new Circle(1.0);alert(c.area());    
+
+这种写法没什么特别的，只">
+<meta property="og:updated_time" content="2016-01-28T10:58:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="复制代码//第1种写法function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());复制代码这种写法没什么特别的，只">
+<meta name="twitter:title" content="Be Myself">
+<meta name="twitter:description" content="第1种写法  
+
+function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
+var c = new Circle(1.0);alert(c.area());    
+
+这种写法没什么特别的，只">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -90,27 +102,41 @@ var c = new Circle(1.0);alert(c.area());复制代码这种写法没什么特别�
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      闭包
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
  
         
-        <p>复制代码<br>//第1种写法<br>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
-<p>var c = new Circle(1.0);<br>alert(c.area());<br>复制代码<br>这种写法没什么特别的，只是给函数添加一些属性。</p>
-<p>复制代码<br>//第2种写法<br>var Circle = function() {<br>   var obj = new Object();<br>   obj.PI = 3.14159;  </p>
-<p>   obj.area = function( r ) {<br>       return this.PI <em> r </em> r;<br>   }<br>   return obj;<br>}  </p>
-<p>var c = new Circle();<br>alert( c.area( 1.0 ) );<br>复制代码<br>这种写法是声明一个变量，将一个函数当作值赋给变量。</p>
-<p>复制代码<br>//第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
-<p>alert( Circle.Area( 1.0 ) );<br>复制代码<br>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</p>
-<p>复制代码<br>//第4种写法<br>var Circle={<br>   “PI”:3.14159,<br> “area”:function(r){<br>          return this.PI <em> r </em> r;<br>        }  </p>
+        <ol>
+<li>第1种写法  </li>
+</ol>
+<p>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
+<p>var c = new Circle(1.0);<br>alert(c.area());    </p>
+<ul>
+<li>这种写法没什么特别的，只是给函数添加一些属性。</li>
+</ul>
+<ol>
+<li><p>第2种写法<br>var Circle = function() {<br>var obj = new Object();<br>obj.PI = 3.14159;  </p>
+<p>obj.area = function( r ) {  </p>
+<pre><code>return this.PI * r * r;  
+</code></pre><p>}<br>return obj;<br>}  </p>
+</li>
+</ol>
+<p>var c = new Circle();<br>alert( c.area( 1.0 ) );  </p>
+<ul>
+<li>这种写法是声明一个变量，将一个函数当作值赋给变量。</li>
+</ul>
+<ol>
+<li>第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {  <pre><code>return this.PI * r * r;  
+</code></pre>}  </li>
+</ol>
+<p>alert( Circle.Area( 1.0 ) );  </p>
+<ul>
+<li>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</li>
+</ul>
+<ol>
+<li>第4种写法<br>var Circle={<br>“PI”:3.14159,<br>“area”:function(r){  <pre><code>  return this.PI * r * r;  
+}  
+</code></pre></li>
+</ol>
 
     
     </div>
@@ -177,7 +203,7 @@ var c = new Circle(1.0);alert(c.area());复制代码这种写法没什么特别�
       <ul>
         
           <li>
-            <a href="/2016/01/28/闭包/">闭包</a>
+            <a href="/2016/01/28/闭包/">(no title)</a>
           </li>
         
           <li>

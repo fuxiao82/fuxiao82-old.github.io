@@ -88,27 +88,41 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/28/闭包/">闭包</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
  
         
-        <p>复制代码<br>//第1种写法<br>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
-<p>var c = new Circle(1.0);<br>alert(c.area());<br>复制代码<br>这种写法没什么特别的，只是给函数添加一些属性。</p>
-<p>复制代码<br>//第2种写法<br>var Circle = function() {<br>   var obj = new Object();<br>   obj.PI = 3.14159;  </p>
-<p>   obj.area = function( r ) {<br>       return this.PI <em> r </em> r;<br>   }<br>   return obj;<br>}  </p>
-<p>var c = new Circle();<br>alert( c.area( 1.0 ) );<br>复制代码<br>这种写法是声明一个变量，将一个函数当作值赋给变量。</p>
-<p>复制代码<br>//第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
-<p>alert( Circle.Area( 1.0 ) );<br>复制代码<br>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</p>
-<p>复制代码<br>//第4种写法<br>var Circle={<br>   “PI”:3.14159,<br> “area”:function(r){<br>          return this.PI <em> r </em> r;<br>        }  </p>
+        <ol>
+<li>第1种写法  </li>
+</ol>
+<p>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
+<p>var c = new Circle(1.0);<br>alert(c.area());    </p>
+<ul>
+<li>这种写法没什么特别的，只是给函数添加一些属性。</li>
+</ul>
+<ol>
+<li><p>第2种写法<br>var Circle = function() {<br>var obj = new Object();<br>obj.PI = 3.14159;  </p>
+<p>obj.area = function( r ) {  </p>
+<pre><code>return this.PI * r * r;  
+</code></pre><p>}<br>return obj;<br>}  </p>
+</li>
+</ol>
+<p>var c = new Circle();<br>alert( c.area( 1.0 ) );  </p>
+<ul>
+<li>这种写法是声明一个变量，将一个函数当作值赋给变量。</li>
+</ul>
+<ol>
+<li>第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {  <pre><code>return this.PI * r * r;  
+</code></pre>}  </li>
+</ol>
+<p>alert( Circle.Area( 1.0 ) );  </p>
+<ul>
+<li>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</li>
+</ul>
+<ol>
+<li>第4种写法<br>var Circle={<br>“PI”:3.14159,<br>“area”:function(r){  <pre><code>  return this.PI * r * r;  
+}  
+</code></pre></li>
+</ol>
 
     
     </div>
@@ -253,7 +267,7 @@
       <ul>
         
           <li>
-            <a href="/2016/01/28/闭包/">闭包</a>
+            <a href="/2016/01/28/闭包/">(no title)</a>
           </li>
         
           <li>
