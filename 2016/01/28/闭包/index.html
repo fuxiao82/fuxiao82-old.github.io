@@ -5,31 +5,16 @@
   
   <title>Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第1种写法  
-
-function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());    
-
-这种写法没什么特别的，只">
+  <meta name="description" content="第1种写法  12345678910111213141516171819202122232425262728293031function Circle(r) &amp;#123;        this.r = r;  &amp;#125;  Circle.PI = 3.14159;  Circle.prototype.area = function() &amp;#123;    return Circle.PI *">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Be Myself">
 <meta property="og:url" content="http://fuxiao0.github.io/2016/01/28/闭包/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="第1种写法  
-
-function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());    
-
-这种写法没什么特别的，只">
-<meta property="og:updated_time" content="2016-01-28T10:58:47.000Z">
+<meta property="og:description" content="第1种写法  12345678910111213141516171819202122232425262728293031function Circle(r) &amp;#123;        this.r = r;  &amp;#125;  Circle.PI = 3.14159;  Circle.prototype.area = function() &amp;#123;    return Circle.PI *">
+<meta property="og:updated_time" content="2016-01-29T02:33:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Be Myself">
-<meta name="twitter:description" content="第1种写法  
-
-function Circle(r) {      this.r = r;}Circle.PI = 3.14159;Circle.prototype.area = function() {  return Circle.PI  this.r  this.r;}  
-var c = new Circle(1.0);alert(c.area());    
-
-这种写法没什么特别的，只">
+<meta name="twitter:description" content="第1种写法  12345678910111213141516171819202122232425262728293031function Circle(r) &amp;#123;        this.r = r;  &amp;#125;  Circle.PI = 3.14159;  Circle.prototype.area = function() &amp;#123;    return Circle.PI *">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -106,42 +91,16 @@ var c = new Circle(1.0);alert(c.area());
  
         
         <ol>
-<li>第1种写法  </li>
-</ol>
-<p>function Circle(r) {<br>      this.r = r;<br>}<br>Circle.PI = 3.14159;<br>Circle.prototype.area = function() {<br>  return Circle.PI <em> this.r </em> this.r;<br>}  </p>
-<p>var c = new Circle(1.0);<br>alert(c.area());    </p>
-<ul>
-<li>这种写法没什么特别的，只是给函数添加一些属性。</li>
-</ul>
-<ol>
-<li><p>第2种写法<br>var Circle = function() {<br>var obj = new Object();<br>obj.PI = 3.14159;  </p>
-<p>obj.area = function( r ) {  </p>
-<pre><code>return this.PI * r * r;  
-</code></pre><p>}<br>return obj;<br>}  </p>
+<li>第1种写法  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">      <span class="keyword">this</span>.r = r;  </span><br><span class="line">&#125;  </span><br><span class="line">Circle.PI = <span class="number">3.14159</span>;  </span><br><span class="line">Circle.prototype.area = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> Circle.PI * <span class="keyword">this</span>.r * <span class="keyword">this</span>.r;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle(<span class="number">1.0</span>);     </span><br><span class="line">alert(c.area());</span><br><span class="line"><span class="string">``</span><span class="string">`    </span><br><span class="line">* 这种写法没什么特别的，只是给函数添加一些属性。</span><br><span class="line"> </span><br><span class="line">2. 第2种写法</span><br><span class="line">`</span><span class="string">``</span>javascript  </span><br><span class="line"><span class="keyword">var</span> Circle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">   <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();  </span><br><span class="line">   obj.PI = <span class="number">3.14159</span>;  </span><br><span class="line">     </span><br><span class="line">   obj.area = <span class="function"><span class="keyword">function</span>(<span class="params"> r </span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="keyword">return</span> obj;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle();  </span><br><span class="line">alert( c.area( <span class="number">1.0</span> ) );</span><br><span class="line"><span class="string">``</span><span class="string">`  </span><br><span class="line"> * 这种写法是声明一个变量，将一个函数当作值赋给变量。</span><br><span class="line"> </span><br><span class="line">3. 第3种写法</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>var c = new Circle();<br>alert( c.area( 1.0 ) );  </p>
-<ul>
-<li>这种写法是声明一个变量，将一个函数当作值赋给变量。</li>
-</ul>
-<ol>
-<li>第3种写法<br>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {  <pre><code>return this.PI * r * r;  
-</code></pre>}  </li>
-</ol>
-<p>alert( Circle.Area( 1.0 ) );  </p>
-<ul>
-<li>这种方法最好理解，就是new 一个对象，然后给对象添加属性和方法。</li>
-</ul>
-<ol>
-<li>第4种写法<br>var Circle={<br>“PI”:3.14159,<br>“area”:function(r){  <pre><code>  return this.PI * r * r;  
-}  
-</code></pre></li>
-</ol>
+<p>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
+<p>alert( Circle.Area( 1.0 ) );<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 这种方法最好理解，就是<span class="keyword">new</span> 一个对象，然后给对象添加属性和方法。</span><br><span class="line"> </span><br><span class="line"><span class="number">4.</span> 第<span class="number">4</span>种写法 </span><br><span class="line">`<span class="javascript"></span>``<span class="javascript"> </span><br><span class="line"><span class="keyword">var</span> Circle=&#123;  </span><br><span class="line">   <span class="string">"PI"</span>:<span class="number">3.14159</span>,  </span><br><span class="line"> <span class="string">"area"</span>:<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;  </span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">        &#125;</span></span><br></pre></td></tr></table></figure></p>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cijz2oo590006k0v712hmmr22" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cijz2skk50006ktv70y9irjv0" class="article-share-link">Share</a>
       
       
     </footer>
