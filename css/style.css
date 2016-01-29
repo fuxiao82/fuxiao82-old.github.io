@@ -114,8 +114,8 @@ button::-moz-focus-inner {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/awesome-webfont.eot?v=#4.5.0");
-  src: url("../fonts/awesome-webfont.eot?#iefix&v=#4.5.0") format("embedded-opentype"), url("../fonts/awesome-webfont.woff?v=#4.5.0") format("woff"), url("../fonts/awesome-webfont.ttf?v=#4.5.0") format("truetype"), url("../fonts/awesome-webfont.svg#fontawesomeregular?v=#4.5.0") format("svg");
+  src: url("../fonts/fontawesome-webfont.eot?v=#4.5.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=#4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=#4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=#4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.5.0") format("svg");
 }
 html,
 body,
