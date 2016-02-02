@@ -23,7 +23,7 @@ b )Transition">
 用法html文档类型a )HTML Strict DTD–免于表现层的混乱
 1&amp;lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot; http://www.w3.org/TR/html4/strict.dtd&quot;&amp;gt;
 b )Transition">
-<meta property="og:updated_time" content="2016-02-02T12:03:33.000Z">
+<meta property="og:updated_time" content="2016-02-02T12:08:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于doctype">
 <meta name="twitter:description" content="阿里面试
@@ -135,8 +135,10 @@ b )Transition">
 <p>让dtd与文档所遵循的标准对应:如果doctype声明指定的是xhtml dtd，但文档包含的是旧式风格的html标记，就是不恰当的；<br>类似地，如果doctype声明指定的是html dtd，但文档包含的是xhtml 1.0 strict标记，同样是不恰当的。<br>如果没有指定有效的doctype声明，大多数浏览器都会使用一个内建的默认dtd。在这种情况下， 浏览器会用内建的dtd来试着显示你所指定的标记(不过这是页面写得太糟糕的时候的做法)。</p>
 </blockquote>
 <h3 id="u7ED3_u8BBA"><a href="#u7ED3_u8BBA" class="headerlink" title="结论"></a>结论</h3><pre><code>建议在以后都直接用“&lt;!doctype html&gt;”，用&lt;!doctype html&gt;的话就会开启浏览器的标准兼容模式，在标准兼容模式下，不能保证与其它版本（IE6之前的，直接忽略吧），的 Internet Explorer 保持兼容，文档的渲染行为也许与将来的 Internet Explorer 不同，但也请大家放心地使用吧~~
-</code></pre><h3 id="u5C0F_u8D34_u58EB_uFF1A"><a href="#u5C0F_u8D34_u58EB_uFF1A" class="headerlink" title="小贴士："></a>小贴士：</h3><blockquote>
-<p>XHTML 1就是HTML 4.01的XML化，是一种不向前兼容的格式。</p>
+</code></pre><h3 id="u5C0F_u8D34_u58EB_uFF1A"><a href="#u5C0F_u8D34_u58EB_uFF1A" class="headerlink" title="小贴士："></a>小贴士：</h3><ul>
+<li>XHTML 1就是HTML 4.01的XML化，是一种不向前兼容的格式。</li>
+</ul>
+<blockquote>
 <p>HTML 4.01 中的 doctype 需要对 DTD 进行引用，因为 HTML 4.01 基于 SGML。</p>
 <p>SGML规定了在文档中嵌入描述标记的标准格式，指定了描述文档结构的标准方法，目前在WEB上使用的HTML格式便是使用固定标签集的一种 SGML文档。<br>补充:<br>在标准模式中，浏览器根据规范呈现页面；在混杂模式中，页面以一种比较宽松的向后兼容的方式显示。混杂模式通常模拟老式浏览器（比如Microsoft IE 4和Netscape Navigator 4）的行为以防止老站点无法工作。</p>
 </blockquote>
