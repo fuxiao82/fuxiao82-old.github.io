@@ -78,6 +78,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-文档碎片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/文档碎片/" class="article-date">
+  <time datetime="2016-02-02T11:15:20.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/文档碎片/">文档碎片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <h2 id="u6587_u6863_u788E_u7247"><a href="#u6587_u6863_u788E_u7247" class="headerlink" title="文档碎片"></a>文档碎片</h2><h3 id="u5B9A_u4E49"><a href="#u5B9A_u4E49" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<p>类似一个临时的文档，要所有要加的dom元素先放在这里，达到不要每次操作dom元素，提高页面效率：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//创建十个段落,常规的方式</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild (oTxt);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第一次创建需要的时间:"</span>+(d2.getTime()-d1.getTime()));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用了createDocumentFragment()的程序</span></span><br><span class="line"><span class="keyword">var</span> d3 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> pFragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild(oTxt);</span><br><span class="line">    pFragment.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(pFragment);</span><br><span class="line"><span class="keyword">var</span> d4 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第2次创建需要的时间:"</span>+(d4.getTime()-d3.getTime()));</span><br><span class="line"></span><br><span class="line">[来源](http:<span class="comment">//www.cnblogs.com/yzenet/p/3999489.html)</span></span><br></pre></td></tr></table></figure>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/02/02/文档碎片/" data-id="cik5b7ymx000ai8v7x9xlmfel" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-文档碎片/">js,文档碎片</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/28/闭包/" class="article-date">
@@ -101,7 +145,7 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cijz54uvj0006qtv7wfaaj9sf" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cik5b7yml0006i8v77e0nuqe5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,52 +184,10 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cijz54uvz000dqtv76kqvh14i" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cik5b7yn1000gi8v77zdeqrne" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端定律/">前端定律</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ES6新特性在Babel下的兼容性列表" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/26/ES6新特性在Babel下的兼容性列表/" class="article-date">
-  <time datetime="2016-01-26T12:18:13.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/ES6新特性在Babel下的兼容性列表/">ES6新特性在Babel下的兼容性列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <p>ES6新特性在Babel下的兼容性列表</p>
-<p>ES6特性    兼容性<br>箭头函数:    支持<br>类的声明和继承:    部分支持，IE8不支持<br>增强的对象字面量:    支持<br>字符串模板:    支持<br>解构:    支持，但注意使用方式<br>参数默认值，不定参数，拓展参数:    支持<br>let与const:    支持<br>for of:    IE不支持<br>iterator, generator:    不支持<br>模块 module、Proxies、Symbol:    不支持<br>Map，Set 和 WeakMap，WeakSet:    不支持<br>Promises、Math，Number，String，Object 的新API:    不支持<br>export &amp; import:    支持<br>生成器函数:    不支持<br>数组拷贝:    支持</p>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/" data-id="cijz54uw9000mqtv7ejtkbr0t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
 
     </footer>
   </div>
@@ -210,7 +212,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-文档碎片/">js,文档碎片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -219,7 +221,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/前端定律/" style="font-size: 10px;">前端定律</a> <a href="/tags/本地存储/" style="font-size: 10px;">本地存储</a>
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/js-文档碎片/" style="font-size: 10px;">js,文档碎片</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/前端定律/" style="font-size: 10px;">前端定律</a> <a href="/tags/本地存储/" style="font-size: 10px;">本地存储</a>
     </div>
   </div>
 
@@ -228,7 +230,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">时间轴</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -239,6 +241,10 @@
     <h3 class="widget-title">最近更新</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/02/文档碎片/">文档碎片</a>
+          </li>
         
           <li>
             <a href="/2016/01/28/闭包/">(no title)</a>
@@ -254,10 +260,6 @@
         
           <li>
             <a href="/2016/01/22/本地存储/">本地存储的手段</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/22/Velocity/">Velocity</a>
           </li>
         
       </ul>
