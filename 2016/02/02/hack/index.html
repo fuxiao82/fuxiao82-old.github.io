@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Be Myself</title>
+  <title>hack | Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="a little one wants to have the world with her power">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Be Myself">
-<meta property="og:url" content="http://fuxiao0.github.io/index.html">
+  <meta name="description" content="###定义
+ *Hack，一种开源脚本语言，运行在HHVM虚拟机上，主要开发者为Facebook。在2014年3月20日正式发布。在发布前，Facebook已经在它的网站上广泛使用测试。
+ *主要开发者为Bryan O’Sullivan，Julien Verlaguet与Alok Menghrajani。它的语法接近于PHP，但是同时使用动态类型（dynamic typing）与静态类型（stat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hack">
+<meta property="og:url" content="http://fuxiao0.github.io/2016/02/02/hack/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="a little one wants to have the world with her power">
+<meta property="og:description" content="###定义
+ *Hack，一种开源脚本语言，运行在HHVM虚拟机上，主要开发者为Facebook。在2014年3月20日正式发布。在发布前，Facebook已经在它的网站上广泛使用测试。
+ *主要开发者为Bryan O’Sullivan，Julien Verlaguet与Alok Menghrajani。它的语法接近于PHP，但是同时使用动态类型（dynamic typing）与静态类型（stat">
+<meta property="og:updated_time" content="2016-02-02T11:42:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Be Myself">
-<meta name="twitter:description" content="a little one wants to have the world with her power">
+<meta name="twitter:title" content="hack">
+<meta name="twitter:description" content="###定义
+ *Hack，一种开源脚本语言，运行在HHVM虚拟机上，主要开发者为Facebook。在2014年3月20日正式发布。在发布前，Facebook已经在它的网站上广泛使用测试。
+ *主要开发者为Bryan O’Sullivan，Julien Verlaguet与Alok Menghrajani。它的语法接近于PHP，但是同时使用动态类型（dynamic typing）与静态类型（stat">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -76,9 +83,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hack" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hack" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/02/hack/" class="article-date">
   <time datetime="2016-02-02T11:42:18.000Z" itemprop="datePublished">2016-02-02</time>
@@ -91,8 +96,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/hack/">hack</a>
+    <h1 class="article-title" itemprop="name">
+      hack
     </h1>
   
 
@@ -120,106 +125,21 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-文档碎片" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/02/文档碎片/" class="article-date">
-  <time datetime="2016-02-02T11:15:20.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/文档碎片/">文档碎片</a>
-    </h1>
+    <a href="/2016/02/02/文档碎片/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">文档碎片</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <h3 id="u5B9A_u4E49"><a href="#u5B9A_u4E49" class="headerlink" title="定义"></a>定义</h3><ul>
-<li>类似一个临时的文档，要所有要加的dom元素先放在这里，达到不要每次操作dom元素，提高页面效率：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//创建十个段落,常规的方式</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild (oTxt);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第一次创建需要的时间:"</span>+(d2.getTime()-d1.getTime()));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用了createDocumentFragment()的程序</span></span><br><span class="line"><span class="keyword">var</span> d3 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> pFragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild(oTxt);</span><br><span class="line">    pFragment.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(pFragment);</span><br><span class="line"><span class="keyword">var</span> d4 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第2次创建需要的时间:"</span>+(d4.getTime()-d3.getTime()));</span><br><span class="line"></span><br><span class="line">[来源](http:<span class="comment">//www.cnblogs.com/yzenet/p/3999489.html)</span></span><br></pre></td></tr></table></figure>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/02/02/文档碎片/" data-id="cik5ceytk000crev7q38orqil" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-
-  
-    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/28/闭包/" class="article-date">
-  <time datetime="2016-01-28T10:51:25.000Z" itemprop="datePublished">2016-01-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/28/闭包/">闭包的写法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <ol>
-<li>第1种写法  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">      <span class="keyword">this</span>.r = r;  </span><br><span class="line">&#125;  </span><br><span class="line">Circle.PI = <span class="number">3.14159</span>;  </span><br><span class="line">Circle.prototype.area = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> Circle.PI * <span class="keyword">this</span>.r * <span class="keyword">this</span>.r;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle(<span class="number">1.0</span>);     </span><br><span class="line">alert(c.area());</span><br><span class="line"><span class="string">``</span><span class="string">`    </span><br><span class="line">* 这种写法没什么特别的，只是给函数添加一些属性。</span><br><span class="line"> </span><br><span class="line">2. 第2种写法</span><br><span class="line">`</span><span class="string">``</span>javascript  </span><br><span class="line"><span class="keyword">var</span> Circle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">   <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();  </span><br><span class="line">   obj.PI = <span class="number">3.14159</span>;  </span><br><span class="line">     </span><br><span class="line">   obj.area = <span class="function"><span class="keyword">function</span>(<span class="params"> r </span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="keyword">return</span> obj;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle();  </span><br><span class="line">alert( c.area( <span class="number">1.0</span> ) );</span><br><span class="line"><span class="string">``</span><span class="string">`  </span><br><span class="line"> * 这种写法是声明一个变量，将一个函数当作值赋给变量。</span><br><span class="line"> </span><br><span class="line">3. 第3种写法</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
-<p>alert( Circle.Area( 1.0 ) );<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 这种方法最好理解，就是<span class="keyword">new</span> 一个对象，然后给对象添加属性和方法。</span><br><span class="line"> </span><br><span class="line"><span class="number">4.</span> 第<span class="number">4</span>种写法 </span><br><span class="line">`<span class="javascript"></span>``<span class="javascript"> </span><br><span class="line"><span class="keyword">var</span> Circle=&#123;  </span><br><span class="line">   <span class="string">"PI"</span>:<span class="number">3.14159</span>,  </span><br><span class="line"> <span class="string">"area"</span>:<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;  </span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">        &#125;</span></span><br></pre></td></tr></table></figure></p>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cik5ceyt80006rev7a5rhdzvz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </section>
         
           <aside id="sidebar">
