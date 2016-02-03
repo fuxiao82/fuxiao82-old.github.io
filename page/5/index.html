@@ -3,39 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ECMAScript 6 | Be Myself</title>
+  <title>Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="let
-let声明的变量只在它所在的代码块有效。
-
-let不像var那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。
-
-如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些命令，就会报错。
-
-ES6规定暂时性死区和不存在变量提升，主要是为了减少运行时错误，防止在变量声明前就使用这个变量，从而导致意料之外的行为。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ECMAScript 6">
-<meta property="og:url" content="http://fuxiao0.github.io/2016/01/21/ECMAScript-6/index.html">
+  <meta name="description" content="a little one wants to have the world with her power">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Be Myself">
+<meta property="og:url" content="http://fuxiao0.github.io/page/5/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="let
-let声明的变量只在它所在的代码块有效。
-
-let不像var那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。
-
-如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些命令，就会报错。
-
-ES6规定暂时性死区和不存在变量提升，主要是为了减少运行时错误，防止在变量声明前就使用这个变量，从而导致意料之外的行为。">
-<meta property="og:updated_time" content="2016-02-02T11:49:23.000Z">
+<meta property="og:description" content="a little one wants to have the world with her power">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECMAScript 6">
-<meta name="twitter:description" content="let
-let声明的变量只在它所在的代码块有效。
-
-let不像var那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。
-
-如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些命令，就会报错。
-
-ES6规定暂时性死区和不存在变量提升，主要是为了减少运行时错误，防止在变量声明前就使用这个变量，从而导致意料之外的行为。">
+<meta name="twitter:title" content="Be Myself">
+<meta name="twitter:description" content="a little one wants to have the world with her power">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -98,7 +76,63 @@ ES6规定暂时性死区和不存在变量提升，主要是为了减少运行�
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ECMAScript-6" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-图解css3-核心技术与案例实战" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/22/图解css3-核心技术与案例实战/" class="article-date">
+  <time datetime="2016-01-22T05:56:42.000Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/22/图解css3-核心技术与案例实战/">图解css3-核心技术与案例实战</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <h2 id="u9009_u62E9_u5668"><a href="#u9009_u62E9_u5668" class="headerlink" title="选择器"></a>选择器</h2><p>1.后代选择器与子选择器区别：</p>
+<ul>
+<li>后代选择器包含子、孙。。。所有子子孙孙内容；</li>
+<li>子选择器只包括子的内容，不包括孙的内容；</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">div</span> <span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">body</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;3S</span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;<span class="pseudo">dd</span></span><br><span class="line">        &lt;<span class="keyword">div</span>&gt;<span class="number">31</span>&lt;/<span class="keyword">div</span>*        &lt;<span class="keyword">div</span>&gt;<span class="number">32</span>&lt;/<span class="keyword">div</span>*    &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">4</span></span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;<span class="pseudo">dd</span></span><br><span class="line">        &lt;<span class="keyword">div</span>&gt;<span class="number">41</span>&lt;/<span class="keyword">div</span>*        &lt;<span class="keyword">div</span>&gt;<span class="number">42</span>&lt;/<span class="keyword">div</span>*    &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p>2.伪类:link,:visited,:hover,:active排列顺序是如此，且对于a标签，必须有href属性，且href属性不是http格式，才可展示link标签的样式；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:link</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:visited</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:active</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>test<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test1<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"baidu.com"</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test2<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test3<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p>###结构伪类选择器</p>
+<p>:nth-child(xx)</p>
+<p>xx有三部分组成，“－4n＋5”，其中－代表方向，＋往右，－往左；4代表每次循环总位数，＋5代表从第5位往右开始循环；</p>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/01/22/图解css3-核心技术与案例实战/" data-id="cik6srxbw000fswxh9z9r7rl7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ECMAScript-6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/21/ECMAScript-6/" class="article-date">
   <time datetime="2016-01-21T09:55:30.000Z" itemprop="datePublished">2016-01-21</time>
@@ -111,8 +145,8 @@ ES6规定暂时性死区和不存在变量提升，主要是为了减少运行�
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      ECMAScript 6
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/ECMAScript-6/">ECMAScript 6</a>
     </h1>
   
 
@@ -655,25 +689,16 @@ eg:
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/01/22/图解css3-核心技术与案例实战/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          图解css3-核心技术与案例实战
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
 
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
