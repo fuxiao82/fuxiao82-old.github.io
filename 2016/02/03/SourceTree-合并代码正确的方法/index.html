@@ -15,7 +15,7 @@
 <meta property="og:description" content="团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：
 1.提交修改2.切换到dashen/service分支，拉取最新代码3.右键我的分支合并到当前代码4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。
 也有说第3步应该">
-<meta property="og:updated_time" content="2016-02-03T12:14:06.000Z">
+<meta property="og:updated_time" content="2016-02-03T12:19:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SourceTree 合并代码正确的方法">
 <meta name="twitter:description" content="团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：
@@ -109,6 +109,9 @@
         <p>团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：</p>
 <p>1.提交修改<br>2.切换到dashen/service分支，拉取最新代码<br>3.右键我的分支合并到当前代码<br>4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。</p>
 <p>也有说第3步应该是右键选“将当前修改变基到当前分支”，但还是需要重新提交，Merge一下代码提交成功后，才能推送。</p>
+<p>切换到dashen/service分支, 先拉取代码, 这种方法是对的, 而且应该是被鼓励的. </p>
+<p>我不太喜欢使用rebase方法, 应该就是LZ说的那种”将当前修改变基到当前分支”. 虽然这种方式,能够让这个分支的commit记录保持线性, 但是这样也丢失了这个分支的一些信息. 比如这个分支从哪个commit分出来的, 在哪个commit合并回去的. </p>
+<p>我现在遵循是git-flow中使用的那种方法. 将特性分支合并到develop时, 使用 <code>git merge --no-ff</code> 选项, 即使这个分支被删除了, 这个分支的一些信息也能明了的看到.</p>
 
     
     </div>
