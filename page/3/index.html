@@ -78,6 +78,112 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/hack/" class="article-date">
+  <time datetime="2016-02-02T11:42:18.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/hack/">hack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <p>###定义</p>
+<ul>
+<li><p>Hack，一种开源脚本语言，运行在HHVM虚拟机上，主要开发者为Facebook。在2014年3月20日正式发布。在发布前，Facebook已经在它的网站上广泛使用测试。</p>
+</li>
+<li><p>主要开发者为Bryan O’Sullivan，Julien Verlaguet与Alok Menghrajani。它的语法接近于PHP，但是同时使用动态类型（dynamic typing）与静态类型（static typing），这被称为Gradual Typing。</p>
+</li>
+</ul>
+<p>###实例<br>实例1：</p>
+<pre><code>1. 适用范围：IE:6.0,IE7.0,IE8.0之间的兼容
+2. 实例说明：此例中我们使用了渐进识别的方式，从总体中逐渐排除局部。首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。接着，再次使用“+”将IE8和IE7、IE6分离开来，此时，我们的IE8已经独立识别。
+3. 实例代码：
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.bb&#123;</span><br><span class="line">height:32px;</span><br><span class="line">background-color:#f1ee18;/*所有识别*/</span><br><span class="line">.background-color:#00deff\9; /*IE6、7、8识别*/</span><br><span class="line">+background-color:#a200ff;/*IE6、7识别*/</span><br><span class="line">_background-color:#1e0bd1;/*IE6识别*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*一个用于展示的class为bb的div标签*/</span><br><span class="line">&lt; div class ="bb"&gt;&lt;/ div &gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">实例2：</span><br><span class="line">        1. 适用范围：IE:6.0,IE7.0,IE8.0,Firefox之间的兼容</span><br><span class="line">        2. 实例说明：大家很容易的可以看出这是情境（一）的加强版，适用于更广泛的环境。其实情境（一）中也已经做到了把火狐与IE游览器区分开来了，现在我们要做的是把火狐从其它游览器中再次识别出来。大家仔细看下代码，大家会发现其实游览器识别是很简单的。火狐如何识别？对了，IE中对伪类支持不广泛，所以伪类是个不错的途径。(.yourClass,x:-moz-any-link, x:default)注意，这个区分伪类往往IE7也能识别，所以最好还需要把IE7单独识别出来，且此方法对ff3.6 已无效，firefox的区分可以使用@-moz-document url-prefix()&#123;&#125;</span><br><span class="line">        3. 实例代码：</span><br><span class="line"></span><br><span class="line">```css</span><br><span class="line">.bb&#123;</span><br><span class="line">height:32px;</span><br><span class="line">background-color:#f1ee18;/*所有识别*/</span><br><span class="line">background-color:#00deff\9; /*IE6、7、8识别*/</span><br><span class="line">+background-color:#a200ff;/*IE6、7识别*/</span><br><span class="line">_background-color:#1e0bd1;/*IE6识别*/</span><br><span class="line">&#125;</span><br><span class="line">.bb, x:-moz-any-link, x:default&#123;background-color:#00ff00;&#125;/*IE7 firefox3.5及以下 识别 */</span><br><span class="line">@-moz-document url-prefix()&#123;.bb&#123;background-color:#00ff00;&#125;&#125;/* 仅firefox 识别 */</span><br><span class="line">* +html .bb&#123;background-color:#a200ff;&#125;/* 仅IE7 识别 */</span><br><span class="line"></span><br><span class="line">/*一个用于展示的class为bb的div标签*/</span><br><span class="line">&lt; div class ="bb"&gt;&lt;/ div &gt;</span><br></pre></td></tr></table></figure>
+<p>实例3：<br>1.适用范围：IE:6.0,IE7.0,IE8.0,Firefox,Safari(Chrome)之间的兼容<br>2.实例说明：我们现在将再次对我们的CSS进行加强了，使其能识别Safari(Chrome)游览器。这是基于它们的内核webkit来识别的，用法为@media screen and (-webkit-min-device-pixel-ratio:0)<br>3.实例代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.bb&#123;</span><br><span class="line">height:32px;</span><br><span class="line">background-color:#f1ee18;/*所有识别*/</span><br><span class="line">background-color:#00deff\9; /*IE6、7、8识别*/</span><br><span class="line">+background-color:#a200ff;/*IE6、7识别*/</span><br><span class="line">_background-color:#1e0bd1;/*IE6识别*/</span><br><span class="line">&#125;</span><br><span class="line">@media screen and (-webkit-min-device-pixel-ratio:0)&#123;.bb&#123;background-color:#f1ee18&#125;&#125;&#123;&#125; /*safari(Chrome) 有效 */</span><br><span class="line">.bb, x:-moz-any-link, x:default&#123;background-color:#00ff00;&#125;/*IE7 firefox3.5及以下 识别 */</span><br><span class="line">@-moz-document url-prefix()&#123;.bb&#123;background-color:#00ff00;&#125;&#125;/*仅firefox 识别*/</span><br><span class="line">* +html .bb&#123;background-color:#a200ff;&#125;/* 仅IE7 识别 */</span><br><span class="line">/*一个用于展示的class为bb的div标签*/</span><br><span class="line">&lt; div class ="bb"&gt;&lt;/ div &gt;</span><br></pre></td></tr></table></figure>
+<p>实例4：</p>
+<ol>
+<li>适用范围：IE:6.0,IE7.0,IE8.0,Firefox,Safari(Chrome)之间的兼容</li>
+<li>实例说明：实例的具体代码在下面实例代码中已经列出，具体效果如此页面的顶端部分效果，您可以通过不同游览器检测该效果。这次我们基本把所有的主流游览器都兼容了，大家来看下代码。Opera的识别有一部分归功于“\0”标记，这个标记只被IE8和Opera识别，特殊的标记往往造就的是我们更广泛的hack手段。下例的代码比较完整，大家可以选择参考。</li>
+<li>实例代码：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"> <span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span> <span class="attribute">lang</span>=<span class="value">"gb2312"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">Content-Type</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=gb2312"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line"><span class="comment">/***************************************** 各游览器兼容CSS **********************************************/</span></span><br><span class="line"><span class="class">.bb</span><span class="rules">&#123;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">32px</span></span></span>;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#f1ee18</span></span></span>;<span class="comment">/*所有识别*/</span> <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#00deff</span>\<span class="number">9</span></span></span>; <span class="comment">/*IE6、7、8识别*/</span> +<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#a200ff</span></span></span>;<span class="comment">/*IE6、7识别*/</span> <span class="rule"><span class="attribute">_background-color</span>:<span class="value"><span class="hexcolor">#1e0bd1</span><span class="comment">/*IE6识别*/</span></span></span></span>&#125;</span><br><span class="line"> </span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio:<span class="number">0</span>)</span>&#123;<span class="class">.bb</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#f1ee18</span></span></span></span>&#125;&#125;<span class="rules">&#123;&#125;</span> <span class="comment">/* Safari(Chrome) 有效 */</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> all and (min-width: <span class="number">0px</span>)</span>&#123; <span class="class">.bb</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#f1ee18</span></span></span>;<span class="comment">/*opera and Safari(Chrome) and firefox*/</span> <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#4cac70</span>\<span class="number">0</span></span></span>;&#125;</span><span class="comment">/* 仅 Opera 有效 */</span> &#125;<span class="rules">&#123;&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="class">.bb</span>, <span class="tag">x</span><span class="pseudo">:-moz-any-link</span>, <span class="tag">x</span><span class="pseudo">:default</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#4eff00</span></span></span>;<span class="comment">/*IE7、Firefox3.5及以下 识别 */</span>&#125;</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">url-prefix</span>()</span>&#123;<span class="class">.bb</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#4eff00</span></span></span>;<span class="comment">/*仅 Firefox 识别 */</span>&#125;</span>&#125;</span><br><span class="line">* +<span class="tag">html</span> <span class="class">.bb</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#a200ff</span></span></span>;&#125;</span><span class="comment">/* 仅IE7 识别 */</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/* 一般情况下 我们区分IE7 只用 +background-color 配合 _background-color 就行了 如果必须写 .bb, x:-moz-any-link, x:default 这样的代码区分 Firefox3.5及以下 则谨记此写法对IE7也有效，故在其中要再重写一次 +background-color 或者使用 * +html .bb&#123;background-color:blue;&#125; 方法仅对 IE7 有效。可使用 @-moz-document url-prefix()&#123;&#125; 方法独立区分所有 firefox */</span></span><br><span class="line"> </span><br><span class="line"><span class="class">.browsers</span> <span class="tag">td</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">8%</span></span></span>;<span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">8px</span></span></span>;&#125;</span>&#125;</span><br><span class="line"><span class="class">.browsercolor</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#333</span></span></span>;<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">18px</span></span></span>;<span class="rule"><span class="attribute">font-weight</span>:<span class="value">bold</span></span>;&#125;</span></span><br><span class="line"><span class="class">.ie6</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#1e0bd1</span></span></span></span>&#125;</span><br><span class="line"><span class="class">.ie7</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#a200ff</span></span></span></span>&#125;</span><br><span class="line"><span class="class">.ie8</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#00deff</span></span></span></span>&#125;</span><br><span class="line"><span class="class">.firefox</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#4eff00</span></span></span></span>&#125;</span><br><span class="line"><span class="class">.opera</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#4cac70</span></span></span></span>&#125;</span><br><span class="line"><span class="class">.other</span><span class="rules">&#123;<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#f1ee18</span></span></span>;&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="id">#tipTable</span> <span class="tag">td</span>,<span class="id">#tipTable</span> <span class="tag">th</span><span class="rules">&#123;<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">56px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">16px</span></span></span>;<span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>;&#125;</span></span><br><span class="line"><span class="id">#wordTable</span> <span class="tag">td</span><span class="rules">&#123;<span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">8px</span></span></span>;&#125;</span></span><br><span class="line"><span class="id">#firefoxTip</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line"><span class="id">#firefoxTip</span>, <span class="tag">x</span><span class="pseudo">:-moz-any-link</span>, <span class="tag">x</span><span class="pseudo">:default</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;<span class="comment">/*IE7 firefox3.5及以下 识别 */</span>+<span class="rule"><span class="attribute">display</span>:<span class="value">none<span class="comment">/*再区分一次IE7*/</span></span></span></span>&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">url-prefix</span>()</span>&#123;<span class="id">#firefoxTip</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;<span class="comment">/*仅 firefox 识别 */</span>&#125;</span>&#125;</span><br><span class="line"><span class="id">#ChromeTip</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none</span></span>;&#125;</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (-webkit-min-device-pixel-ratio:<span class="number">0</span>)</span>&#123;<span class="id">#ChromeTip</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;&#125;</span>&#125;<span class="rules">&#123;&#125;</span> <span class="comment">/* safari(Chrome) 有效 */</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> all and (min-width: <span class="number">0px</span>)</span>&#123;<span class="id">#ChromeTip</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">none\<span class="number">0</span></span></span>;&#125;</span> <span class="comment">/* 仅 Opera 有效 */</span> &#125;<span class="rules">&#123;&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"browsers"</span> <span class="attribute">width</span>=<span class="value">"100%"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">cellpadding</span>=<span class="value">"0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>IE6<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>IE7<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>IE8<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>Opera<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span>Safari(Chrome)<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"browsercolor"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"ie6"</span>&gt;</span>IE6<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"ie7"</span>&gt;</span>IE7<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"ie8"</span>&gt;</span>IE8<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"firefox"</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"opera"</span>&gt;</span>Opera<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"other"</span>&gt;</span>Safari(Chrome)<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bb"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"display:none;display:block\0;display:none\9;"</span>&gt;</span>Opera的辨别色是深绿色，Opera游览器很时髦么。<span class="tag">&lt;/<span class="title">span</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"firefoxTip"</span>&gt;</span>Firefox的辨别色是浅绿色，Firefox是很强大的游览器。<span class="tag">&lt;/<span class="title">span</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"ChromeTip"</span>&gt;</span>Safari和Chrome的辨别色是金黄色，Safari和Chrome使用的都是Webkit内核<span class="tag">&lt;/<span class="title">span</span> &gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 8]&gt;IE8的辨别色是蓝色，新版IE8的功能可是不少呢。&lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 7]&gt;IE7的辨别色是紫色，IE7还可以凑合着用！&lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;IE6的辨别色是红色，不过，IE6可是有点落后了！&lt;![endif]--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/02/02/hack/" data-id="cik8513zn000uqqkt7u5wlle0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hack/">hack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-文档碎片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/文档碎片/" class="article-date">
+  <time datetime="2016-02-02T11:15:20.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/文档碎片/">文档碎片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <h3 id="u5B9A_u4E49"><a href="#u5B9A_u4E49" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>类似一个临时的文档，要所有要加的dom元素先放在这里，达到不要每次操作dom元素，提高页面效率：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//创建十个段落,常规的方式</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild (oTxt);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第一次创建需要的时间:"</span>+(d2.getTime()-d1.getTime()));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用了createDocumentFragment()的程序</span></span><br><span class="line"><span class="keyword">var</span> d3 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> pFragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild(oTxt);</span><br><span class="line">    pFragment.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(pFragment);</span><br><span class="line"><span class="keyword">var</span> d4 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第2次创建需要的时间:"</span>+(d4.getTime()-d3.getTime()));</span><br><span class="line"></span><br><span class="line">[来源](http:<span class="comment">//www.cnblogs.com/yzenet/p/3999489.html)</span></span><br></pre></td></tr></table></figure>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/02/02/文档碎片/" data-id="cik8513z7000fqqktkyjuc5ju" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/28/闭包/" class="article-date">
@@ -111,7 +217,7 @@
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cik6srxbj0006swxh0bf9xhze" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cik8513ys0006qqkta3h4nqc6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
@@ -124,92 +230,9 @@
 
 
   
-    <article id="post-前端摩尔定律" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/26/前端摩尔定律/" class="article-date">
-  <time datetime="2016-01-26T12:48:31.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/前端摩尔定律/">前端摩尔定律</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <p>前端摩尔定律：前端每18个月难度增加一倍</p>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cik6srxbz000iswxhvxx5y50l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端定律/">前端定律</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ES6新特性在Babel下的兼容性列表" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/26/ES6新特性在Babel下的兼容性列表/" class="article-date">
-  <time datetime="2016-01-26T12:18:13.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/ES6新特性在Babel下的兼容性列表/">ES6新特性在Babel下的兼容性列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
- 
-        
-        <p>ES6新特性在Babel下的兼容性列表</p>
-<p>ES6特性    兼容性<br>箭头函数:    支持<br>类的声明和继承:    部分支持，IE8不支持<br>增强的对象字面量:    支持<br>字符串模板:    支持<br>解构:    支持，但注意使用方式<br>参数默认值，不定参数，拓展参数:    支持<br>let与const:    支持<br>for of:    IE不支持<br>iterator, generator:    不支持<br>模块 module、Proxies、Symbol:    不支持<br>Map，Set 和 WeakMap，WeakSet:    不支持<br>Promises、Math，Number，String，Object 的新API:    不支持<br>export &amp; import:    支持<br>生成器函数:    不支持<br>数组拷贝:    支持</p>
-
-    
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/26/ES6新特性在Babel下的兼容性列表/" data-id="cik6srxcj0016swxh905moqm1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -222,7 +245,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJS/">angularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doctype/">doctype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中最重要的一点/">js中最重要的一点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJS/">angularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetimepicker/">datetimepicker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doctype/">doctype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中最重要的一点/">js中最重要的一点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -231,7 +254,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/angularJS/" style="font-size: 10px;">angularJS</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/doctype/" style="font-size: 10px;">doctype</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/js-文档碎片/" style="font-size: 10px;">js 文档碎片</a> <a href="/tags/js中最重要的一点/" style="font-size: 10px;">js中最重要的一点</a> <a href="/tags/sourceTree使用/" style="font-size: 10px;">sourceTree使用</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/前端定律/" style="font-size: 10px;">前端定律</a> <a href="/tags/本地存储/" style="font-size: 10px;">本地存储</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+      <a href="/tags/angularJS/" style="font-size: 10px;">angularJS</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/datetimepicker/" style="font-size: 10px;">datetimepicker</a> <a href="/tags/doctype/" style="font-size: 10px;">doctype</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/js-文档碎片/" style="font-size: 10px;">js 文档碎片</a> <a href="/tags/js中最重要的一点/" style="font-size: 10px;">js中最重要的一点</a> <a href="/tags/sourceTree使用/" style="font-size: 10px;">sourceTree使用</a> <a href="/tags/velocity/" style="font-size: 10px;">velocity</a> <a href="/tags/前端定律/" style="font-size: 10px;">前端定律</a> <a href="/tags/本地存储/" style="font-size: 10px;">本地存储</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     </div>
   </div>
 
@@ -240,7 +263,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">时间轴</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -253,6 +276,14 @@
       <ul>
         
           <li>
+            <a href="/2016/02/04/bootstrap的container使用注意/">bootstrap的container使用注意</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/04/解决日历插件不能强制关闭的问题/">解决日历插件不能强制关闭的问题</a>
+          </li>
+        
+          <li>
             <a href="/2016/02/03/SourceTree-合并代码正确的方法/">SourceTree 合并代码正确的方法</a>
           </li>
         
@@ -262,14 +293,6 @@
         
           <li>
             <a href="/2016/02/02/js作用域最重要的一点/">js作用域最重要的一点</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/02/关于doctype/">关于doctype</a>
-          </li>
-        
-          <li>
-            <a href="/2016/02/02/hack/">hack</a>
           </li>
         
       </ul>
