@@ -1,3 +1,0 @@
-yout: search
-title: search
-----

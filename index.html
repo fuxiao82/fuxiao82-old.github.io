@@ -5,25 +5,15 @@
   
   <title>Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
+  <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Be Myself">
-<meta property="og:url" content="http://fuxiao0.github.io/404.html">
+<meta property="og:url" content="http://fuxiao0.github.io/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
-<meta property="og:updated_time" content="2016-01-22T10:01:13.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Be Myself">
-<meta name="twitter:description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
+<meta name="twitter:description">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -95,44 +85,147 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-bootstrap的container使用注意" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2016-01-22T10:01:13.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/02/04/bootstrap的container使用注意/" class="article-date">
+  <time datetime="2016-02-04T10:45:11.000Z" itemprop="datePublished">2016-02-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/04/bootstrap的container使用注意/">bootstrap的container使用注意</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
  
         
-        <html>
-<head>
-<meta charset="UTF-8">
-<title>404</title>                                                                                                                                       
-</head>
-<body>
-<h1>404 Page Not Found</h1>
-<script type="text/javascript" src="/imgr?src=http%3A%2F%2Fwww.qq.com%2F404%2Fsearch_children.js" charset="utf-8"></script>
-</body>
-</html>
+        <ul>
+<li>在使用bootstrap的过程中发现单独使用row类布局时，整个页面宽度总是大于100%，导致浏览器出现滚动条，这是大多数情况不想看到的效果，而且半天找不出原因，如果习惯写完整个页面结构才检查bug的“坏习惯”<br><img src="../images/bootstrap的container使用注意/01.png" alt="图01"><br><img src="../images/bootstrap的container使用注意/02.png" alt="图02"></li>
+<li>之后发现<div class="container-fluid">控件或者container控件下面，则不会出现滚动条<br><img src="../images/bootstrap的container使用注意/03.png" alt="图03"><br><img src="../images/bootstrap的container使用注意/04.png" alt="图04"></div></li>
+<li>为此， 查看了bootstrap对row 和 container-fluid、container 的栅栏系统的解释<br><img src="../images/bootstrap的container使用注意/05.png" alt="图05"></li>
+</ul>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/404.html" data-id="cil1x0c7m0000laxhcbk4ra7v" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/02/04/bootstrap的container使用注意/" data-id="cil31emb90012bbxhl34qxjk3" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
+
     </footer>
   </div>
-  
-    
   
 </article>
 
 
+
+  
+    <article id="post-解决日历插件不能强制关闭的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/04/解决日历插件不能强制关闭的问题/" class="article-date">
+  <time datetime="2016-02-04T10:32:34.000Z" itemprop="datePublished">2016-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/04/解决日历插件不能强制关闭的问题/">解决日历插件不能强制关闭的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <p>在触发函数上添加一个onchange监听事件，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">（jquery thing）</span><br><span class="line">$(obj).datetimepicker(&#123;</span><br><span class="line">  ...属性</span><br><span class="line">&#125;).on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="keyword">this</span>).datetimepicker(<span class="string">'hide'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="../images/解决日历插件不能强制关闭的问题/01.png" alt="图01"></p>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/02/04/解决日历插件不能强制关闭的问题/" data-id="cil31elb10008bbxhdqnbnh71" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datetimepicker/">datetimepicker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SourceTree-合并代码正确的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/03/SourceTree-合并代码正确的方法/" class="article-date">
+  <time datetime="2016-02-03T12:08:27.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/03/SourceTree-合并代码正确的方法/">SourceTree 合并代码正确的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+        
+        <p>团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：</p>
+<p>1.提交修改<br>2.切换到dashen/service分支，拉取最新代码<br>3.右键我的分支合并到当前代码<br>4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。</p>
+<p>也有说第3步应该是右键选“将当前修改变基到当前分支”，但还是需要重新提交，Merge一下代码提交成功后，才能推送。</p>
+<p>切换到dashen/service分支, 先拉取代码, 这种方法是对的, 而且应该是被鼓励的. </p>
+<p>我不太喜欢使用rebase方法, 应该就是LZ说的那种”将当前修改变基到当前分支”. 虽然这种方式,能够让这个分支的commit记录保持线性, 但是这样也丢失了这个分支的一些信息. 比如这个分支从哪个commit分出来的, 在哪个commit合并回去的. </p>
+<p>我现在遵循是git-flow中使用的那种方法. 将特性分支合并到develop时, 使用 <code>git merge --no-ff</code> 选项, 即使这个分支被删除了, 这个分支的一些信息也能明了的看到.</p>
+
+    
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fuxiao0.github.io/2016/02/03/SourceTree-合并代码正确的方法/" data-id="cil31emb3000zbbxhz7a1ieu1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">

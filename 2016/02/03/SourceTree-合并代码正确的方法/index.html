@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Be Myself</title>
+  <title>SourceTree 合并代码正确的方法 | Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Be Myself">
-<meta property="og:url" content="http://fuxiao0.github.io/404.html">
+  <meta name="description" content="团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：
+1.提交修改2.切换到dashen/service分支，拉取最新代码3.右键我的分支合并到当前代码4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。
+也有说第3步应该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SourceTree 合并代码正确的方法">
+<meta property="og:url" content="http://fuxiao0.github.io/2016/02/03/SourceTree-合并代码正确的方法/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
-<meta property="og:updated_time" content="2016-01-22T10:01:13.000Z">
+<meta property="og:description" content="团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：
+1.提交修改2.切换到dashen/service分支，拉取最新代码3.右键我的分支合并到当前代码4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。
+也有说第3步应该">
+<meta property="og:updated_time" content="2016-02-03T12:19:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Be Myself">
-<meta name="twitter:description" content="404                                                                                                                                       
-
-
-404 Page Not Found">
+<meta name="twitter:title" content="SourceTree 合并代码正确的方法">
+<meta name="twitter:description" content="团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：
+1.提交修改2.切换到dashen/service分支，拉取最新代码3.右键我的分支合并到当前代码4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。
+也有说第3步应该">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -95,40 +92,67 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SourceTree-合并代码正确的方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2016-01-22T10:01:13.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/02/03/SourceTree-合并代码正确的方法/" class="article-date">
+  <time datetime="2016-02-03T12:08:27.000Z" itemprop="datePublished">2016-02-03</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SourceTree 合并代码正确的方法
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
  
         
-        <html>
-<head>
-<meta charset="UTF-8">
-<title>404</title>                                                                                                                                       
-</head>
-<body>
-<h1>404 Page Not Found</h1>
-<script type="text/javascript" src="/imgr?src=http%3A%2F%2Fwww.qq.com%2F404%2Fsearch_children.js" charset="utf-8"></script>
-</body>
-</html>
+        <p>团队开发，比如分支在group/dashen/service上，我创建一个分支到personal/tuntun/service，然后我在自己的分支上改动了几个文件，然后：</p>
+<p>1.提交修改<br>2.切换到dashen/service分支，拉取最新代码<br>3.右键我的分支合并到当前代码<br>4.然后在当前分支（dashen下）再推送，但是往往不行，需要再提交，”Merge…”，这个时候再推送就ok了。</p>
+<p>也有说第3步应该是右键选“将当前修改变基到当前分支”，但还是需要重新提交，Merge一下代码提交成功后，才能推送。</p>
+<p>切换到dashen/service分支, 先拉取代码, 这种方法是对的, 而且应该是被鼓励的. </p>
+<p>我不太喜欢使用rebase方法, 应该就是LZ说的那种”将当前修改变基到当前分支”. 虽然这种方式,能够让这个分支的commit记录保持线性, 但是这样也丢失了这个分支的一些信息. 比如这个分支从哪个commit分出来的, 在哪个commit合并回去的. </p>
+<p>我现在遵循是git-flow中使用的那种方法. 将特性分支合并到develop时, 使用 <code>git merge --no-ff</code> 选项, 即使这个分支被删除了, 这个分支的一些信息也能明了的看到.</p>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/404.html" data-id="cil1x0c7m0000laxhcbk4ra7v" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/02/03/SourceTree-合并代码正确的方法/" data-id="cil31emb3000zbbxhz7a1ieu1" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/02/04/解决日历插件不能强制关闭的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          解决日历插件不能强制关闭的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/02/angularjs初步/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">angularjs初步</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

@@ -3,27 +3,72 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Be Myself</title>
+  <title>css权威指南 | Be Myself</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="404                                                                                                                                       
+  <meta name="description" content="选择器
+两个类名以空格连接写，表示选中同时包含两个类的元素；
+
+属性名部分匹配：
 
 
-404 Page Not Found">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Be Myself">
-<meta property="og:url" content="http://fuxiao0.github.io/404.html">
+[foo^=”bar”] 以bar开头；
+[foo~=”bar”]等同.bar
+[foo$=”bar”]以bar结尾
+[foo*=”bar”]包含字符串bar
+
+相邻兄弟，用➕连接
+
+选择器的优先级：
+
+
+
+判断准则：
+  一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。通常我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css权威指南">
+<meta property="og:url" content="http://fuxiao0.github.io/2016/01/22/css权威指南/index.html">
 <meta property="og:site_name" content="Be Myself">
-<meta property="og:description" content="404                                                                                                                                       
+<meta property="og:description" content="选择器
+两个类名以空格连接写，表示选中同时包含两个类的元素；
+
+属性名部分匹配：
 
 
-404 Page Not Found">
-<meta property="og:updated_time" content="2016-01-22T10:01:13.000Z">
+[foo^=”bar”] 以bar开头；
+[foo~=”bar”]等同.bar
+[foo$=”bar”]以bar结尾
+[foo*=”bar”]包含字符串bar
+
+相邻兄弟，用➕连接
+
+选择器的优先级：
+
+
+
+判断准则：
+  一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。通常我">
+<meta property="og:updated_time" content="2016-02-02T11:52:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Be Myself">
-<meta name="twitter:description" content="404                                                                                                                                       
+<meta name="twitter:title" content="css权威指南">
+<meta name="twitter:description" content="选择器
+两个类名以空格连接写，表示选中同时包含两个类的元素；
+
+属性名部分匹配：
 
 
-404 Page Not Found">
+[foo^=”bar”] 以bar开头；
+[foo~=”bar”]等同.bar
+[foo$=”bar”]以bar结尾
+[foo*=”bar”]包含字符串bar
+
+相邻兄弟，用➕连接
+
+选择器的优先级：
+
+
+
+判断准则：
+  一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。通常我">
   
   
     <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -95,40 +140,110 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-css权威指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2016-01-22T10:01:13.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/01/22/css权威指南/" class="article-date">
+  <time datetime="2016-01-22T08:53:34.000Z" itemprop="datePublished">2016-01-22</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css权威指南
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
  
         
-        <html>
-<head>
-<meta charset="UTF-8">
-<title>404</title>                                                                                                                                       
-</head>
-<body>
-<h1>404 Page Not Found</h1>
-<script type="text/javascript" src="/imgr?src=http%3A%2F%2Fwww.qq.com%2F404%2Fsearch_children.js" charset="utf-8"></script>
-</body>
-</html>
+        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ol>
+<li><p>两个类名以空格连接写，表示选中同时包含两个类的元素；</p>
+</li>
+<li><p>属性名部分匹配：</p>
+</li>
+</ol>
+<p>[foo^=”bar”] 以bar开头；</p>
+<p>[foo~=”bar”]等同.bar</p>
+<p>[foo$=”bar”]以bar结尾</p>
+<p>[foo*=”bar”]包含字符串bar</p>
+<ol>
+<li><p>相邻兄弟，用➕连接</p>
+</li>
+<li><p>选择器的优先级：</p>
+</li>
+</ol>
+<ul>
+<li><p>判断准则：</p>
+<p>  一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。通常我们用1表示标签名选择器的优先级，用10表示类选择器的优先级，用100标示ID选择器的优先级。</p>
+</li>
+<li><p>使用原则：</p>
+<p>  第一：准确的选到要控制的标签；</p>
+<p>  第二：使用最合理优先级的选择器；</p>
+<p>  第三：HTML和CSS代码尽量简洁美观</p>
+</li>
+<li><p>书写准则：</p>
+<p>  简洁、高效的CSS</p>
+<ul>
+<li><p>不要在ID选择器前使用标签名</p>
+</li>
+<li><p>不要再class选择器前使用标签名</p>
+</li>
+<li><p>尽量少使用层级关系</p>
+</li>
+<li><p>使用class代替层级关系</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>垂直对齐</p>
+<p>line－height：</p>
+<ul>
+<li>注意line－height：2，2指根据元素本身高，line－height为其2倍；<br>vertical－align：</li>
+<li>只应用于行内元素和可替换元素，不可继承；</li>
+<li><p>取值相对对象分别为：<br><strong> baseline 、sub、super、百分数值: 基线相对于父元素基线；
+</strong> bottom、top :元素行内框相对于行框底端；<br>** text-bottom、text－top: 行内文本底端相对于父元素默认文本框（由父元素的font－size得到）</p>
+<pre><code>* middle:行内元素框相对于父元素基线（父元素基线上方0.5ex，ex相对于父元素font－size定义）
+</code></pre></li>
+</ul>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/404.html" data-id="cil1x0c7m0000laxhcbk4ra7v" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/22/css权威指南/" data-id="cil31emb0000wbbxhi8kda5x2" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/01/22/Velocity/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Velocity
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/22/图解css3-核心技术与案例实战/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">图解css3-核心技术与案例实战</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
