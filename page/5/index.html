@@ -57,22 +57,17 @@
       <nav id="sub-nav">
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-
-    </nav>
+      </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fuxiao0.github.io"></form>
       </div>
-
- </div>
-<div style="
-    width: 100%;
-    text-align: right;
-    floar: right;
-">
-<iframe  frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="82" src="http://music.163.com/outchain/player?type=2&amp;id=33682336&amp;auto=1&amp;height=66"></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vaBDdy7hJcw" frameborder="0" allowfullscreen></iframe>
-</div> 
- </div>
+    </div>
+ 
+ <div style="width: 100%; text-align: right;float: right;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" style="position:absolute;top:222px;right:-82px;" src="http://music.163.com/outchain/player?type=2&amp;id=33682336&amp;auto=1&amp;height=66"></iframe>
+ <!--   <iframe width="280" height="280" src="https://www.youtube.com/embed/vaBDdy7hJcw" frameborder="0" allowfullscreen></iframe>
+ --></div> 
+</div>
 <script>
     
     var d = new Date();
@@ -87,10 +82,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Velocity" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-文档碎片" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/22/Velocity/" class="article-date">
-  <time datetime="2016-01-22T08:55:39.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/02/02/文档碎片/" class="article-date">
+  <time datetime="2016-02-02T11:15:20.000Z" itemprop="datePublished">2016-02-02</time>
 </a>
     
   </div>
@@ -101,7 +96,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/22/Velocity/">Velocity</a>
+      <a class="article-title" href="/2016/02/02/文档碎片/">文档碎片</a>
     </h1>
   
 
@@ -110,18 +105,18 @@
     <div class="article-entry" itemprop="articleBody">
  
         
-        <p>判断语句中的执行会影响选择器判断：</p>
-<p>例如：</p>
-<p>伪类选择器：first－child、last－child不会忽略判断中的执行语句，无论是否执行判断中的语句；</p>
-<p>解决方法：使用：nth－child代替；</p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>类似一个临时的文档，要所有要加的dom元素先放在这里，达到不要每次操作dom元素，提高页面效率：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//创建十个段落,常规的方式</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild (oTxt);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第一次创建需要的时间:"</span>+(d2.getTime()-d1.getTime()));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用了createDocumentFragment()的程序</span></span><br><span class="line"><span class="keyword">var</span> d3 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> pFragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">1000</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line">    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(<span class="string">"段落"</span> + i);</span><br><span class="line">    p.appendChild(oTxt);</span><br><span class="line">    pFragment.appendChild(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(pFragment);</span><br><span class="line"><span class="keyword">var</span> d4 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"第2次创建需要的时间:"</span>+(d4.getTime()-d3.getTime()));</span><br><span class="line"></span><br><span class="line">[来源](http:<span class="comment">//www.cnblogs.com/yzenet/p/3999489.html)</span></span><br></pre></td></tr></table></figure>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/Velocity/" data-id="cil31embc0015bbxhx767eky1" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/02/02/文档碎片/" data-id="cil6ck8dd000jt7xh7i81ey8v" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/velocity/">velocity</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a></li></ul>
 
     </footer>
   </div>
@@ -131,10 +126,10 @@
 
 
   
-    <article id="post-css权威指南" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/22/css权威指南/" class="article-date">
-  <time datetime="2016-01-22T08:53:34.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/01/28/闭包/" class="article-date">
+  <time datetime="2016-01-28T10:51:25.000Z" itemprop="datePublished">2016-01-28</time>
 </a>
     
   </div>
@@ -145,7 +140,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/22/css权威指南/">css权威指南</a>
+      <a class="article-title" href="/2016/01/28/闭包/">闭包的写法</a>
     </h1>
   
 
@@ -154,63 +149,20 @@
     <div class="article-entry" itemprop="articleBody">
  
         
-        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ol>
-<li><p>两个类名以空格连接写，表示选中同时包含两个类的元素；</p>
-</li>
-<li><p>属性名部分匹配：</p>
+        <ol>
+<li>第1种写法  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">      <span class="keyword">this</span>.r = r;  </span><br><span class="line">&#125;  </span><br><span class="line">Circle.PI = <span class="number">3.14159</span>;  </span><br><span class="line">Circle.prototype.area = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> Circle.PI * <span class="keyword">this</span>.r * <span class="keyword">this</span>.r;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle(<span class="number">1.0</span>);     </span><br><span class="line">alert(c.area());</span><br><span class="line"><span class="string">``</span><span class="string">`    </span><br><span class="line">* 这种写法没什么特别的，只是给函数添加一些属性。</span><br><span class="line"> </span><br><span class="line">2. 第2种写法</span><br><span class="line">`</span><span class="string">``</span>javascript  </span><br><span class="line"><span class="keyword">var</span> Circle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">   <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();  </span><br><span class="line">   obj.PI = <span class="number">3.14159</span>;  </span><br><span class="line">     </span><br><span class="line">   obj.area = <span class="function"><span class="keyword">function</span>(<span class="params"> r </span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="keyword">return</span> obj;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle();  </span><br><span class="line">alert( c.area( <span class="number">1.0</span> ) );</span><br><span class="line"><span class="string">``</span><span class="string">`  </span><br><span class="line"> * 这种写法是声明一个变量，将一个函数当作值赋给变量。</span><br><span class="line"> </span><br><span class="line">3. 第3种写法</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>[foo^=”bar”] 以bar开头；</p>
-<p>[foo~=”bar”]等同.bar</p>
-<p>[foo$=”bar”]以bar结尾</p>
-<p>[foo*=”bar”]包含字符串bar</p>
-<ol>
-<li><p>相邻兄弟，用➕连接</p>
-</li>
-<li><p>选择器的优先级：</p>
-</li>
-</ol>
-<ul>
-<li><p>判断准则：</p>
-<p>  一般而言，选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高。通常我们用1表示标签名选择器的优先级，用10表示类选择器的优先级，用100标示ID选择器的优先级。</p>
-</li>
-<li><p>使用原则：</p>
-<p>  第一：准确的选到要控制的标签；</p>
-<p>  第二：使用最合理优先级的选择器；</p>
-<p>  第三：HTML和CSS代码尽量简洁美观</p>
-</li>
-<li><p>书写准则：</p>
-<p>  简洁、高效的CSS</p>
-<ul>
-<li><p>不要在ID选择器前使用标签名</p>
-</li>
-<li><p>不要再class选择器前使用标签名</p>
-</li>
-<li><p>尽量少使用层级关系</p>
-</li>
-<li><p>使用class代替层级关系</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>垂直对齐</p>
-<p>line－height：</p>
-<ul>
-<li>注意line－height：2，2指根据元素本身高，line－height为其2倍；<br>vertical－align：</li>
-<li>只应用于行内元素和可替换元素，不可继承；</li>
-<li><p>取值相对对象分别为：<br><strong> baseline 、sub、super、百分数值: 基线相对于父元素基线；
-</strong> bottom、top :元素行内框相对于行框底端；<br>** text-bottom、text－top: 行内文本底端相对于父元素默认文本框（由父元素的font－size得到）</p>
-<pre><code>* middle:行内元素框相对于父元素基线（父元素基线上方0.5ex，ex相对于父元素font－size定义）
-</code></pre></li>
-</ul>
+<p>var Circle = new Object();<br>Circle.PI = 3.14159;<br>Circle.Area = function( r ) {<br>       return this.PI <em> r </em> r;<br>}  </p>
+<p>alert( Circle.Area( 1.0 ) );<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 这种方法最好理解，就是<span class="keyword">new</span> 一个对象，然后给对象添加属性和方法。</span><br><span class="line"> </span><br><span class="line"><span class="number">4.</span> 第<span class="number">4</span>种写法 </span><br><span class="line">`<span class="javascript"></span>``<span class="javascript"> </span><br><span class="line"><span class="keyword">var</span> Circle=&#123;  </span><br><span class="line">   <span class="string">"PI"</span>:<span class="number">3.14159</span>,  </span><br><span class="line"> <span class="string">"area"</span>:<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;  </span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">        &#125;</span></span><br></pre></td></tr></table></figure></p>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/css权威指南/" data-id="cil31emb0000wbbxhi8kda5x2" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/28/闭包/" data-id="cil6ck75b0007t7xhhk5wvl9m" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
 
     </footer>
   </div>
@@ -220,10 +172,10 @@
 
 
   
-    <article id="post-图解css3-核心技术与案例实战" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-前端摩尔定律" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/22/图解css3-核心技术与案例实战/" class="article-date">
-  <time datetime="2016-01-22T05:56:42.000Z" itemprop="datePublished">2016-01-22</time>
+    <a href="/2016/01/26/前端摩尔定律/" class="article-date">
+  <time datetime="2016-01-26T12:48:31.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     
   </div>
@@ -234,7 +186,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/22/图解css3-核心技术与案例实战/">图解css3-核心技术与案例实战</a>
+      <a class="article-title" href="/2016/01/26/前端摩尔定律/">前端摩尔定律</a>
     </h1>
   
 
@@ -243,28 +195,15 @@
     <div class="article-entry" itemprop="articleBody">
  
         
-        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>1.后代选择器与子选择器区别：</p>
-<ul>
-<li>后代选择器包含子、孙。。。所有子子孙孙内容；</li>
-<li>子选择器只包括子的内容，不包括孙的内容；</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">div</span> <span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">body</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;3S</span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;<span class="pseudo">dd</span></span><br><span class="line">        &lt;<span class="keyword">div</span>&gt;<span class="number">31</span>&lt;/<span class="keyword">div</span>*        &lt;<span class="keyword">div</span>&gt;<span class="number">32</span>&lt;/<span class="keyword">div</span>*    &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;<span class="number">4</span></span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;<span class="pseudo">dd</span></span><br><span class="line">        &lt;<span class="keyword">div</span>&gt;<span class="number">41</span>&lt;/<span class="keyword">div</span>*        &lt;<span class="keyword">div</span>&gt;<span class="number">42</span>&lt;/<span class="keyword">div</span>*    &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<p>2.伪类:link,:visited,:hover,:active排列顺序是如此，且对于a标签，必须有href属性，且href属性不是http格式，才可展示link标签的样式；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:link</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:visited</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> orange</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:active</span><span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">color</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>test<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test1<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"baidu.com"</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test2<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">target</span>=<span class="value">" "</span>&gt;</span>test3<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<p>###结构伪类选择器</p>
-<p>:nth-child(xx)</p>
-<p>xx有三部分组成，“－4n＋5”，其中－代表方向，＋往右，－往左；4代表每次循环总位数，＋5代表从第5位往右开始循环；</p>
+        <p>前端摩尔定律：前端每18个月难度增加一倍</p>
 
     
     </div>
     <footer class="article-footer">
-      <a data-url="http://fuxiao0.github.io/2016/01/22/图解css3-核心技术与案例实战/" data-id="cil31emak000hbbxheve4f6c6" class="article-share-link">Share</a>
+      <a data-url="http://fuxiao0.github.io/2016/01/26/前端摩尔定律/" data-id="cil6ck8ec000qt7xhg5ibvwte" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端定律/">前端定律</a></li></ul>
 
     </footer>
   </div>
@@ -276,7 +215,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -290,23 +229,23 @@
       <ul>
         
           <li>
-            <a href="/2016/02/04/bootstrap的container使用注意/">bootstrap的container使用注意</a>
+            <a href="/2016/02/26/hexo博客待解决问题/">hexo博客待解决问题</a>
           </li>
         
           <li>
-            <a href="/2016/02/04/解决日历插件不能强制关闭的问题/">解决日历插件不能强制关闭的问题</a>
+            <a href="/2016/02/26/replace跳转页面和href跳转页面区别/">replace跳转页面和href跳转页面区别</a>
           </li>
         
           <li>
-            <a href="/2016/02/03/SourceTree-合并代码正确的方法/">SourceTree 合并代码正确的方法</a>
+            <a href="/2016/02/26/垂直居中方法/">垂直居中方法</a>
           </li>
         
           <li>
-            <a href="/2016/02/02/angularjs初步/">angularjs初步</a>
+            <a href="/2016/02/26/hexo-3-0图片添加/">hexo 3.0图片添加</a>
           </li>
         
           <li>
-            <a href="/2016/02/02/js作用域最重要的一点/">js作用域最重要的一点</a>
+            <a href="/2016/02/26/水平居中方法/">水平居中方法</a>
           </li>
         
       </ul>
@@ -319,7 +258,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">时间轴</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">2016年01月</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -329,7 +268,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJS/">angularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetimepicker/">datetimepicker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doctype/">doctype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中最重要的一点/">js中最重要的一点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJS/">angularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetimepicker/">datetimepicker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doctype/">doctype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-文档碎片/">js 文档碎片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js中最重要的一点/">js中最重要的一点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourceTree使用/">sourceTree使用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/velocity/">velocity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/关于博客/">关于博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端定律/">前端定律</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本地存储/">本地存储</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/水平居中/">水平居中</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a><span class="tag-list-count">1</span></li></ul>
     </div>
  </div>
 
